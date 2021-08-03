@@ -1,0 +1,18 @@
+.root {
+    -fx-background-color: #b3ccff;
+}
+
+.text-field {
+    -fx-padding: 7px;
+    }
+
+#header {
+    -fx-font-size: 15px;
+    -fx-font-weight: bolder;
+    -fx-underline: true;
+}
+
+#deleteBtn {
+    -fx-text-fill: #e60000;
+    -fx-font-weight: bolder;
+}

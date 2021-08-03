@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.collections.*?>
+<?import main.*?>
+ 
+<HBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+    <children>
+        <VBox spacing="6" alignment="CENTER">
+            <children>                
+                <Label id="header" text="Contract Form" />
+				
+                <TextField fx:id="firstName" promptText="First Name" />
+                <TextField fx:id="lastName" promptText="Last Name" />
+                <TextField fx:id="address" promptText="Address" />
+				
+                <Label text= "Speed"/> 
+                <ChoiceBox fx:id="choiceSpeed" />
+                <Label text="Bandwidth:" />  
+				
+                <ChoiceBox value="1 GB" fx:id="choicebBandwidth" />
+                <Label text="Contract Duration:" /> 
+				
+                <ChoiceBox fx:id="choicebContract"/>
+				<Label text= ""/> 
+				
+                <HBox spacing="1" alignment="CENTER">
+                    <children>
+                        <Button fx:id="saveBtn" text="Add" onAction="#addPerson" />
+                        <Button fx:id="clearBtn" text="Reset" onAction="#resetPerson" />
+                        <Button id="deleteBtn" fx:id="deleteBtn" text="Delete" onAction="#deletePerson" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>       
+        <Pane>
+            <TableView fx:id="table">
+                <columns>
+                    <TableColumn text="First Name">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="firstName" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Last Name">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="lastName" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Address">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="address" />
+                        </cellValueFactory>                        
+                    </TableColumn>                   
+                    <TableColumn text="Speed">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="speed" />
+                        </cellValueFactory>                        
+                    </TableColumn>
+                    <TableColumn text="Bandwidth">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="bandwidth" />
+                        </cellValueFactory>                        
+                    </TableColumn>
+                    <TableColumn text=" Duration ">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="contract" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <User firstName="Buddy" lastName="Ol'pal" address="Gets Around NN" speed="100 Mbit" bandwidth="Flat" contract="2 years" />						
+                    </FXCollections>
+                </items>
+            </TableView>
+        </Pane>      
+    </children>
+</HBox>
